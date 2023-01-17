@@ -27,36 +27,32 @@ useEffect(()=>{
     <div>
               <form className = "form">
             <input className = "search" type="text" value={searchValue} onChange={e => setSearchValue(e.target.value)} placeholder = "Search Transaction"/>
-            <button className = "search-button" onClick={handleSearch}>Search</button>
+            <button onClick={handleSearch}>Search</button>
         </form>
-<table>
-<tbody>
-<tr>
-   <th>id</th>
-    <th>Date</th>
-    <th>Description</th>
-    <th>Category</th>
-    <th>Amount</th>
+        <table>
+  <thead>
+    <tr>
+      <th>id</th>
+      <th>Date</th>
+      <th>Description</th>
+      <th>Category</th>
+      <th>Amount</th>
     </tr>
-    </tbody>
+  </thead>
+  <tbody>
+    {currentData.map(data => (
+      <tr key={data.id}>
+        <td>{data.id}</td>
+        <td>{data.date}</td>
+        <td>{data.description}</td>
+        <td>{data.category}</td>
+        <td>{data.amount}</td>
+      </tr>
+    ))}
+  </tbody>
 </table>
-        
-        {currentData.map(data=>{
-    return (
 
-        <table className = "table" key={data.id}>
-           <tbody>
-            <tr>
-                
-                <td>{data.id}</td>
-                <td>{data.date}</td>
-                <td>{data.description}</td>
-                <td>{data.category}</td>
-                <td>{data.amount}</td>
-            </tr>
-            </tbody>
-        </table>)
-        })}
+        
     </div>
   )
 }
