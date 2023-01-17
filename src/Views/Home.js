@@ -10,8 +10,9 @@ export default function Home(transactions) {
   return (
     <div>
       <h1>Flatiron Bank</h1> 
-        <Transactions transactions = {transactions}/>
-        <TransactionForm />
+      <TransactionForm />
+      <Transactions transactions = {transactions}/>
+        
     </div>
   )
 }

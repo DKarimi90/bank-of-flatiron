@@ -1,41 +1,42 @@
 import React, {useState}from 'react'
 
 function TransactionForm() {
-    const [transactionList, setTransactionList] = useState()
-    const [date, setDate] = useState("")
-    const [description, setDescription] = useState([])
-    const [category, setCategory] = useState([])
-    const [amount, setAmount] = useState([])
+const [isClicked, setIsClicked] = useState({
+    date: "", 
+    description: "", 
+    category: "", 
+    amount: ""
+})
+const handleChange = (e) => {
+    console.log(e.target.value)
+    setIsClicked({
+        ...isClicked, 
+        [e.target.name] : e.target.value, 
+    })
+}
 
-
-    function handleChange() {
-        setDate(date)
-    }
-
-    function handleChange() {
-        setDescription(description)
-    }
-
-    function handleChange() {
-        setCategory(category)
-    }
-
-    function handleChange() {
-        setAmount(amount)
-    }
-    function handleClick() {
+    const handleSubmit = (e) => {
+        e.preventDefault()
+        fetch("http://localhost:3003/transactions", {
+            method: "POST", 
+            headers: {
+                'Content-Type': 'application/json', 
+            }, 
+            body: JSON.stringify(isClicked)
+        })
+        window.location.reload()
     }
 
 
   return (
     <div>
-        <form className = "addTransaction">
+        <form className = "addTransaction" onSubmit={handleSubmit}>
             <div className = "transactionInput">
-                <input type = "date" name ="date" />
-                <input type = "text" name ="description" />
-                <input type = "text" name ="category" />
-                <input type = "amount" name ="amount" />
-                <button onClick = {handleClick} >Update</button>
+                <input type = "date" name ="date" onChange={handleChange} />
+                <input type = "text" name ="description" onChange={handleChange}/>
+                <input type = "text" name ="category" onChange = {handleChange} />
+                <input type = "amount" name ="amount" onChange = {handleChange} />
+                <button onClick = {handleSubmit} >Update</button>
             </div>
 
         </form>

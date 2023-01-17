@@ -5,29 +5,32 @@ function Transactions( {transactions}) {
     const [searchValue, setSearchValue] = useState('');
 
     const handleSearch = () => {
-        const filteredData = currentData.filter(data => data.description.toLowerCase().includes(searchValue.toLowerCase()));
-        setCurrentData(filteredData);
+    const filteredData = currentData.filter(data => data.description.toLowerCase().includes(searchValue.toLowerCase()));
+    setCurrentData(filteredData);
     }
     
 useEffect(()=>{
 
 
 
-    fetch("http://localhost:3003/transactions")
+    fetch(`http://localhost:3003/transactions?q=${searchValue}`)
     .then(response => response.json())
-    .then(jsonData => {
-        console.log(jsonData)
-        setCurrentData(jsonData)
+    .then(currentData => {
+        
+        setCurrentData(currentData)
     })
-},[])
+},[searchValue])
     console.log(currentData)
 
+function handleSearchValue(e) {
+    setSearchValue(e.target.value)
+}
 
   return (
     <div>
-              <form className = "form">
-            <input className = "search" type="text" value={searchValue} onChange={e => setSearchValue(e.target.value)} placeholder = "Search Transaction"/>
-            <button onClick={handleSearch}>Search</button>
+        <form className = "form">
+            <input className = "search" type="text" value={searchValue} onChange={handleSearchValue} placeholder = "Search Transaction"/>
+            <button className = "btn" onClick={handleSearch}>Search</button>
         </form>
         <table>
   <thead>
