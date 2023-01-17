@@ -1,3 +1,13 @@
+:root {
+  --primary-color: rgb(176, 223, 241); 
+  --secondary-color: grey; 
+}
+body {
+  margin: 0; 
+  padding: 0; 
+  background-color: var(--primary-color)
+
+}
 .App {
   text-align: center;
 }
@@ -36,3 +46,28 @@
     transform: rotate(360deg);
   }
 }
+.table {
+  border-collapse: separate;  
+  width: 50%; 
+  margin: 20px; 
+  
+}
+.table th {
+  padding-top: 12px;
+  padding-bottom: 12px;
+  text-align: left;
+  background-color: #2414ad;
+  color: white;
+  text-align: center;
+
+}
+.table tr:nth-child(even) {
+  background: beige; 
+}
+.table td {
+  padding-top: 12px;
+  padding-bottom: 12px;
+  text-align: left;
+  background-color: #2414ad;
+  color: white;
+  text-align: center;}
