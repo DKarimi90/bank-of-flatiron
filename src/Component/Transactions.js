@@ -13,7 +13,7 @@ useEffect(()=>{
 
 
 
-    fetch("http://localhost:3000/transactions")
+    fetch("http://localhost:3003/transactions")
     .then(response => response.json())
     .then(jsonData => {
         console.log(jsonData)
@@ -25,21 +25,20 @@ useEffect(()=>{
 
   return (
     <div>
-              <form>
-            <input type="text" value={searchValue} onChange={e => setSearchValue(e.target.value)} />
-            <button onClick={handleSearch}>Search</button>
+              <form className = "form">
+            <input className = "search" type="text" value={searchValue} onChange={e => setSearchValue(e.target.value)} placeholder = "Search Transaction"/>
+            <button className = "search-button" onClick={handleSearch}>Search</button>
         </form>
 <table>
 <tbody>
 <tr>
-   
-                <th>id</th>
-                <th>Date</th>
-                <th>Description</th>
-                <th>Category</th>
-                <th>Amount</th>
-            </tr>
-            </tbody>
+   <th>id</th>
+    <th>Date</th>
+    <th>Description</th>
+    <th>Category</th>
+    <th>Amount</th>
+    </tr>
+    </tbody>
 </table>
         
         {currentData.map(data=>{

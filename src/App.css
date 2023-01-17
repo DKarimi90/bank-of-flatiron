@@ -10,6 +10,7 @@ body {
 }
 .App {
   text-align: center;
+  margin: 30px; 
 }
 
 .App-logo {
@@ -47,16 +48,17 @@ body {
   }
 }
 .table {
-  border-collapse: separate;  
-  width: 50%; 
-  margin: 20px; 
+  border-collapse: collapse;  
+  width: 100%;
+  height: 6vh; 
+
   
 }
 .table th {
   padding-top: 12px;
   padding-bottom: 12px;
   text-align: left;
-  background-color: #2414ad;
+  background-color: #dad9eb;
   color: white;
   text-align: center;
 
@@ -68,6 +70,26 @@ body {
   padding-top: 12px;
   padding-bottom: 12px;
   text-align: left;
-  background-color: #2414ad;
+  background-color: #696870;
   color: white;
-  text-align: center;}
+  text-align: center;
+  border: 1px solid white}
+  .form .search {
+    width: 100%;
+    padding: 10px;
+    border-radius: 15px; 
+    background: transparent; 
+    text-align: center; 
+    
+  }
+  .search-button {
+    margin: 10px; 
+    width: 5rem; 
+    height: 30px; 
+    border-radius:4px;
+    background-color: transparent; 
+  }
+  .search-button:hover {
+    background: rgb(238, 238, 225);
+  }
+  
