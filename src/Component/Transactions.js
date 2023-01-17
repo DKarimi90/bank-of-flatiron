@@ -29,7 +29,7 @@ function handleSearchValue(e) {
   return (
     <div>
         <form className = "form">
-            <input className = "search" type="text" value={searchValue} onChange={handleSearchValue} placeholder = "Search Transaction" />
+            <input className = "search" type="text" value={searchValue} onChange={handleSearchValue} placeholder = "Search Transaction &#128269;" />
             <button className = "btn" onClick={handleSearch}>Search</button>
         </form>
         <table>
