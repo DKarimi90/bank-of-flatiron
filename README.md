@@ -1,8 +1,8 @@
 # CODE-CHALLENGE: FLATIRON BANK 
 ## Goals 
--Using the React Library to create a mini bank app
--Evaluating my Technical skills so far
--Identifying Technical strengths and weaknesses 
+-Using the React Library to create a mini bank app<br>
+-Evaluating my Technical skills so far<br>
+-Identifying Technical strengths and weaknesses<br>
 -Complying with the Moringa's academic requirements 
 
 ## Project prerequisites
